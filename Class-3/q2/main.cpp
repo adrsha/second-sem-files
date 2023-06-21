@@ -31,7 +31,7 @@ person::person() {
   cin >> phone;
   cout << "Enter your citizenship number: " << endl;
   cin >> citizenshipNo;
-  if (citizenshipNo < 16) {
+  if (age < 16) {
     citizenshipNo = 0;
   }
 }

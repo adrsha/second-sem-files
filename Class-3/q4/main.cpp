@@ -16,14 +16,14 @@ public:
   void readdata() {
     cout << "Enter your Name" << endl;
     cin >> name;
-    cout << "Enter your EmpNo" << endl;
+    cout << "Enter your rollno" << endl;
     cin >> rollno;
-    cout << "Enter your Address" << endl;
+    cout << "Enter your faculty" << endl;
     cin >> faculty;
   }
   void displaydata() {
-    cout << "Your data is: \nName:" << name << "\nEmpNo:" << rollno
-         << "\nAddress:" << faculty << endl;
+    cout << "Your data is: \nName:" << name << "\nrollno:" << rollno
+         << "\nfaculty:" << faculty << endl;
   }
 };
 
