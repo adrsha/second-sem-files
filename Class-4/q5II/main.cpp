@@ -2,23 +2,35 @@
 #include <string>
 using namespace std;
 class Student {
-  int age;
-  string name;
+  int sub[5];
 
 public:
-  Person() {
-    cout << "Enter your name: ";
-    cin >> name;
-    cout << "Enter your age: ";
-    cin >> age;
+  Student() {
+    for (int i = 0; i < 5; i++) {
+      cout << "Enter the marks for sub" << i + 1;
+      cin >> sub[i];
+    }
   }
-  void showdata() {
-    cout << "Your name is: " << name << " and your age is: " << age << endl;
+  bool ispass() {
+    for (int i = 0; i < 5; i++) {
+      if (sub[i] < 45) {
+        return 0;
+      }
+    }
+    return 1;
   }
 };
 int main() {
-  Person p1;
-  p1.showdata();
-
+  int n;
+  cout << "Enter the no of students!" << endl;
+  cin >> n;
+  Student *std = new Student[n];
+  for (int i = 0; i < 5; i++) {
+    if (std[i].ispass()) {
+      cout << i << ", you passed!";
+    } else {
+      cout << i << ", you failed!";
+    }
+  }
   return 0;
 }
