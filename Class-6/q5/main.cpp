@@ -12,6 +12,7 @@ public:
   }
   void print() { cout << "Tittle is: " << title << endl; }
 };
+
 class classBook : public virtual Preeti {
 protected:
   string accNo;
@@ -21,11 +22,7 @@ public:
     cout << "Accession No: ";
     cin >> accNo;
   }
-  void print() {
-
-    Preeti::print();
-    cout << "Accession No is: " << accNo << endl;
-  }
+  void print() { cout << "Accession No is: " << accNo << endl; }
 };
 class classMagazine : public virtual Preeti {
 protected:
@@ -36,22 +33,17 @@ public:
     cout << "Volume No: ";
     cin >> volNo;
   }
-  void print() {
-
-    Preeti::print();
-    cout << "Volume No is: " << volNo << endl;
-  }
+  void print() { cout << "Volume No is: " << volNo << endl; }
 };
 
-class classJournal : virtual public classMagazine, virtual public classBook {
+class classJournal : public classMagazine, public classBook {
 protected:
   string name;
 
 public:
   classJournal(string name) { this->name = name; }
   void print() {
-    classBook::print();
-    classMagazine::print();
+    cout << "Title is" << title;
     cout << "Name is " << name;
   }
 };
